@@ -81,7 +81,7 @@ export default function Main() {
           </div>
           <div className='max-w-xs mt-4'>
             <h3 className='text-lg'>Metamorfosi</h3>
-            <span className='text-gray-500 text-sm'>Sep 2021 - Apr 2022</span>
+            <span className='text-gray-500 text-sm'>Sep 2021 - Apr 2023</span>
           </div>
         </section>
       </div>
