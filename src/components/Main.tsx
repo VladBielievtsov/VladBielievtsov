@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate } from 'framer-motion';
 import helloImg from '../../public/hello.webp';
+import Project from './project'
+import { AiFillGithub } from 'react-icons/ai';
 
 export default function Main() {
   const [langIsOpen, setLangIsOpen] = useState<boolean>(false)
   const [scope, animate] = useAnimate()
+  const [isOpenProject, setIsOpenProject] = useState<boolean>(false)
 
   useEffect(() => {
     animate("ul", !langIsOpen ? { opacity: 1, clipPath: "inset(0% 0% 99% 0% round 0px 0px 6px 6px)" } : { opacity: 1, clipPath: "inset(0% 0% 0% 0% round 0px 0px 6px 6px)" })
@@ -27,7 +30,7 @@ export default function Main() {
           </motion.button>
           <ul className='bg-black text-center absolute b-0 w-full z-20'>
             <li className='py-1 cursor-pointer text-white hover:underline'>En</li>
-            <li className='py-1 cursor-pointer text-white hover:underline'>Uk</li>
+            <li className='py-1 cursor-pointer text-white hover:underline'>Ua</li>
           </ul>
         </div>
         <section className='mb-20'>
@@ -40,12 +43,13 @@ export default function Main() {
             />
           </div>
           <p className='text-xl tracking-wide'>My name is Vlad Bielievtsov, I have experience in front-end development. I can take a design and make it work in a browser. React and Vue are my favorite frameworks for building websites, and I don't just understand how to do it - I can show you my work in action.</p>
+          <p className='text-xl tracking-wide mt-4'>You can see my works on my github</p>
           <motion.button 
             className=''
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <a href="#" className='bg-black text-white py-2 px-4 rounded-md mt-4 inline-block'>My works</a>
+            <a href="https://github.com/VladBielievtsov" target='_blank' className='bg-black text-white py-2 px-4 rounded-md mt-4 inline-flex items-center'>GitHub <AiFillGithub className="ml-2" /></a>
           </motion.button>
         </section>
         <section className='mb-20'>
@@ -81,10 +85,46 @@ export default function Main() {
           </div>
           <div className='max-w-xs mt-4'>
             <h3 className='text-lg'>Metamorfosi</h3>
-            <span className='text-gray-500 text-sm'>Sep 2021 - Apr 2023</span>
+            <span className='text-gray-500 text-sm'>Sep 2021 - Mar 2023</span>
+          </div>
+        </section>
+        <section className='mb-20'>
+          <h2 className='text-2xl font-bold'>My works</h2>
+          <div className='mt-4'>
+            <div className='flex border-b border-black pb-3 mb-3 items-top'>
+              <div className='max-w-[30%] w-full'>
+                <h3 onClick={() => setIsOpenProject(!isOpenProject)} className='hover:underline inline-block cursor-pointer'>Title of project</h3>
+              </div>
+              <div className='max-w-[20%] w-full'>
+                <p>2022</p>
+              </div>
+              <div className='max-w-[50%] w-full'>
+                <p>Short description</p>
+              </div>
+            </div>
+            <div className='flex border-b border-black pb-3 mb-3 items-top'>
+              <div className='max-w-[30%] w-full'>
+                <h3 onClick={() => setIsOpenProject(!isOpenProject)} className='hover:underline inline-block cursor-pointer'>Title of project</h3>
+              </div>
+              <div className='max-w-[20%] w-full'>
+                <p>2022</p>
+              </div>
+              <div className='max-w-[50%] w-full'>
+                <p>Short description</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className=''>
+          <h2 className="text-2xl font-bold">Get in touch</h2>
+          <a href="mailto:hello@bvlad.com" className='text-3xl mt-8 inline-block hover:underline'>hello@bvlad.com</a>
+          <div className="flex mt-6">
+            <a href="https://github.com/VladBielievtsov" target='_blank' className='underline mr-[30px]'>GitHub</a>
+            <a href="https://www.linkedin.com/in/vlad-bielievtsov/" target='_blank' className='underline'>LinkedIn</a>
           </div>
         </section>
       </div>
+      <Project isOpenProject={isOpenProject} setIsOpenProject={setIsOpenProject} />
     </main>
   )
 }
