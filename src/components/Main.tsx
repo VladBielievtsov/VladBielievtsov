@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate } from 'framer-motion';
-import helloImg from '../../public/hello.webp';
+import helloImg from '../assets/hello.webp';
 import Project from './project'
 import { AiFillGithub } from 'react-icons/ai';
 
