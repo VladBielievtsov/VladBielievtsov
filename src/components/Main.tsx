@@ -8,6 +8,15 @@ export default function Main() {
   const [langIsOpen, setLangIsOpen] = useState<boolean>(false)
   const [scope, animate] = useAnimate()
   const [isOpenProject, setIsOpenProject] = useState<boolean>(false)
+  const [openedProject, setOpenedProject] = useState<number>()
+  const [myWorks, setMyWorks] = useState([
+    {
+      id: 1, title: "Project 1", year: 2020, role: "Name of Role"
+    }, 
+    {
+      id: 2, title: "Project 2", year: 2022, role: "Name of Role"
+    }
+  ])
 
   useEffect(() => {
     animate("ul", !langIsOpen ? { opacity: 1, clipPath: "inset(0% 0% 99% 0% round 0px 0px 6px 6px)" } : { opacity: 1, clipPath: "inset(0% 0% 0% 0% round 0px 0px 6px 6px)" })
@@ -28,7 +37,7 @@ export default function Main() {
           >
             En
           </motion.button>
-          <ul className='bg-black text-center absolute b-0 w-full z-20'>
+          <ul className='bg-black text-center absolute b-0 w-full z-20 opacity-0 langs'>
             <li className='py-1 cursor-pointer text-white hover:underline'>En</li>
             <li className='py-1 cursor-pointer text-white hover:underline'>Ua</li>
           </ul>
@@ -91,28 +100,19 @@ export default function Main() {
         <section className='mb-20'>
           <h2 className='text-2xl font-bold'>My works</h2>
           <div className='mt-4'>
-            <div className='flex border-b border-black pb-3 mb-3 items-top'>
-              <div className='max-w-[30%] w-full'>
-                <h3 onClick={() => setIsOpenProject(!isOpenProject)} className='hover:underline inline-block cursor-pointer'>Title of project</h3>
+            {myWorks.map(work => (
+              <div key={work.id} className='flex border-b border-black pb-3 mb-3 items-top'>
+                <div className='max-w-[30%] w-full'>
+                    <h3 onClick={() => (setIsOpenProject(!isOpenProject), setOpenedProject(work.id))} className='hover:underline inline-block cursor-pointer'>{work.title}</h3>
+                </div>
+                <div className='max-w-[20%] w-full'>
+                  <p>{work.year}</p>
+                </div>
+                <div className='max-w-[50%] w-full'>
+                  <p>Short description</p>
+                </div>
               </div>
-              <div className='max-w-[20%] w-full'>
-                <p>2022</p>
-              </div>
-              <div className='max-w-[50%] w-full'>
-                <p>Short description</p>
-              </div>
-            </div>
-            <div className='flex border-b border-black pb-3 mb-3 items-top'>
-              <div className='max-w-[30%] w-full'>
-                <h3 onClick={() => setIsOpenProject(!isOpenProject)} className='hover:underline inline-block cursor-pointer'>Title of project</h3>
-              </div>
-              <div className='max-w-[20%] w-full'>
-                <p>2022</p>
-              </div>
-              <div className='max-w-[50%] w-full'>
-                <p>Short description</p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
         <section className=''>
@@ -124,7 +124,7 @@ export default function Main() {
           </div>
         </section>
       </div>
-      <Project isOpenProject={isOpenProject} setIsOpenProject={setIsOpenProject} />
+      <Project myWorks={myWorks} openedProject={openedProject} isOpenProject={isOpenProject} setIsOpenProject={setIsOpenProject} />
     </main>
   )
 }

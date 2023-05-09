@@ -61,3 +61,7 @@
       transform: rotate(0deg);
   }
 }
+
+.langs {
+  clip-path: inset(0% 0% 99% 0% round 0px 0px 6px 6px);
+}
