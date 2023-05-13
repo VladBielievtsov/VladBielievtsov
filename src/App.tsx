@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import Header from './components/Header';
-import Main from './components/Main';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './views/Home';
+import NotFoundPage from './views/NotFoundPage';
 
 function App() {
 
   return (
-    <>
-      <div className="bg"></div>
-      <div className='relative z-50'>
-        <Header />
-        <Main />
-      </div>
-    </>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+    </BrowserRouter>
   )
 }
 
