@@ -20,7 +20,7 @@ export default function Main() {
   return (
     <main className='px-4 pt-4 pb-12'>
       <div 
-        className='relative max-w-[768px] w-full mx-auto bg-white rounded-md border border-black p-[30px]'
+        className='relative max-w-[768px] w-full mx-auto bg-white rounded-md border border-black px-[16px] py-[24px] mob:p-[30px]'
       > 
         {/* <SwitchLang /> */}
         <section className='mb-20'>
@@ -32,8 +32,8 @@ export default function Main() {
               className='w-[300px] absolute left-[50%] transform -translate-x-[50%] hidden'  
             />
           </div>
-          <p className='text-xl tracking-wide'>My name is Vlad Bielievtsov, I have experience in front-end development. I can take a design and make it work in a browser. React and Vue are my favorite frameworks for building websites, and I don't just understand how to do it - I can show you my work in action.</p>
-          <p className='text-xl tracking-wide mt-4'>You can see my works on my github</p>
+          <p className='text-base mob:text-xl tracking-wide'>My name is Vlad Bielievtsov, I have experience in front-end development. I can take a design and make it work in a browser. React and Vue are my favorite frameworks for building websites, and I don't just understand how to do it - I can show you my work in action.</p>
+          <p className='text-base mob:text-xl tracking-wide mt-4'>You can see my works on my github</p>
           <motion.button 
             className=''
             whileHover={{ scale: 1.1 }}
@@ -44,7 +44,7 @@ export default function Main() {
         </section>
         <section className='mb-20'>
           <h2 className='text-2xl font-bold'>Skills</h2>
-          <ol className='columns-2 mt-3 list-decimal list-inside'>
+          <ol className='mob:columns-2 mt-3 list-decimal list-inside'>
             <li>HTML</li>
             <li>CSS</li>
             <li>SCSS</li>
