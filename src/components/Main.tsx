@@ -78,7 +78,7 @@ export default function Main() {
             <span className='text-gray-500 text-sm'>Sep 2021 - Mar 2023</span>
           </div>
         </section>
-        <section className='mb-20'>
+        {/* <section className='mb-20'>
           <h2 className='text-2xl font-bold'>My works</h2>
           <div className='mt-4'>
             {myWorks.map(work => (
@@ -95,7 +95,7 @@ export default function Main() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
         <section className=''>
           <h2 className="text-2xl font-bold">Get in touch</h2>
           <a href="mailto:hello@bvlad.com" className='text-3xl mt-8 inline-block hover:underline'>hello@bvlad.com</a>
