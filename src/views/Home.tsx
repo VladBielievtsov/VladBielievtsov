@@ -4,7 +4,7 @@ import Main from "../components/Main";
 
 export default function Home() {
   return (
-    <div className="bg-[#1e1e2e] min-h-screen">
+    <div className="bg-[#1E1E2E] min-h-screen">
       <div className="relative z-50">
         <Header />
         <Main />

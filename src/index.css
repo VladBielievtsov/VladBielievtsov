@@ -6,6 +6,14 @@
   font-family: 'Inter', sans-serif;
 }
 
+p, h1, h2, h3 {
+  line-height: 1.75 !important;
+}
+
+.logo {
+  line-height: 2rem !important;
+}
+
 .helloImage:hover ~ img {
   display: block;
 }
@@ -47,8 +55,4 @@
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
   }
-}
-
-.langs {
-  clip-path: inset(0% 0% 99% 0% round 0px 0px 6px 6px);
 }

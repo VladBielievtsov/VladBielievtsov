@@ -2,15 +2,49 @@ import React from "react";
 import { motion } from "framer-motion";
 import helloImg from "../assets/hello.webp";
 import { AiFillGithub } from "react-icons/ai";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { TbFileDownload } from "react-icons/tb";
+
+const PROGRAMMING = ["JavaScript", "TypeScript", "Go"];
+
+const DATABASES = ["MongoDb", "MySql", "PostgreSql"];
+
+const Front = [
+  "Html",
+  "Css",
+  "Scss",
+  "Tailwind",
+  "React",
+  "Redux",
+  "GSAP",
+  "Wow.js",
+];
+
+const BACKEND = ["Node.js", "Express", "Fiber"];
+
+const PROTOTYPING = ["Figma", "Adobe XD"];
+
+const TESTING = ["Jest"];
+
+const EXPERIENCE = [
+  {
+    title: "Freelance & Themeforest",
+    time: "2019 - 2021",
+  },
+  {
+    title: "Metamorfosi",
+    time: "Sep 2021 - Mar 2023",
+  },
+];
 
 export default function Main() {
   return (
     <main className="px-4 pt-4 pb-12">
-      <div className="text-[#CDD6F4] relative max-w-[768px] w-full mx-auto bg-[#1E1E2E] rounded-md border-[#f2cccd]">
-        <section className="mb-20">
-          <div className="relative mb-3">
+      <div className="text-[#CDD6F4] relative max-w-[650px] w-full mx-auto bg-[#1E1E2E] rounded-md border-[#f2cccd]">
+        <section>
+          <div className="relative mb-8">
             <h1 className="text-3xl font-bold helloImage inline">
-              Hello There <span className="emoji-wave">👋</span>
+              Vlad Bielievtsov <span className="emoji-wave">👋</span>
             </h1>
             <img
               src={helloImg}
@@ -18,15 +52,8 @@ export default function Main() {
               className="w-[300px] absolute left-[50%] transform -translate-x-[50%] hidden"
             />
           </div>
-          <p className="text-base mob:text-lg tracking-wide">
-            My name is Vlad Bielievtsov, I have experience in front-end
-            development. I can take a design and make it work in a browser.
-            React and Vue are my favorite frameworks for building websites, and
-            I don't just understand how to do it - I can show you my work in
-            action.
-          </p>
-          <p className="text-base mob:text-lg tracking-wide mt-4">
-            You can see my works on my github
+          <p className="text-base tracking-wide mb-5">
+            Hi, I am Vlad Bielievtsov, a Front-end Developer
           </p>
           <motion.button
             className=""
@@ -34,73 +61,125 @@ export default function Main() {
             whileTap={{ scale: 0.9 }}
           >
             <a
-              href="https://github.com/VladBielievtsov"
+              href="/resume.pdf"
               target="_blank"
-              className="bg-[#ddb5f2] text-[#1E1E2E] py-2 px-4 rounded-md mt-4 inline-flex items-center"
+              className="bg-[#ddb5f2] text-[#1E1E2E] py-2 px-4 rounded-md inline-flex items-center"
+              download
             >
-              GitHub <AiFillGithub className="ml-2" />
+              Resume <TbFileDownload className="ml-2 text-lg" />
             </a>
           </motion.button>
         </section>
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold">👨‍💻 Skills</h2>
-          <ol className="mob:columns-2 mt-3 list-decimal list-inside">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>SCSS</li>
-            <li>Tailwind</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>Frame Motion</li>
-            <li>GSAP</li>
-            <li>Wow.js</li>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>Go</li>
-            <li>Fiber</li>
-            <li>JWT</li>
-            <li>MongoDb</li>
-            <li>MySql</li>
-            <li>PostgreSQL</li>
-          </ol>
+        <hr className="w-[50px] my-8 mx-auto border-[#ddb5f2]" />
+        <section>
+          <h2 className="text-lg mb-5">👨‍💻 Skills</h2>
+          <p className="text-base skills">
+            Programming:
+            {PROGRAMMING.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+            <br />
+            Front-end:
+            {Front.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+            <br />
+            Back-end:
+            {BACKEND.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+            <br />
+            Databases:
+            {DATABASES.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+            <br />
+            Prototyping:
+            {PROTOTYPING.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+            <br />
+            Testing:
+            {TESTING.map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#35354f] py-1 px-1.5 rounded ml-1 inline-block leading-[100%]"
+              >
+                {skill}
+              </span>
+            ))}
+          </p>
         </section>
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold mb-4">📜 Experience</h2>
-          <div className="max-w-xs">
-            <h3 className="text-lg">Freelance & Themeforest</h3>
-            <span className="text-sm">2019 - 2021</span>
-          </div>
-          <div className="max-w-xs mt-4">
-            <h3 className="text-lg">Metamorfosi</h3>
-            <span className="text-sm">Sep 2021 - Mar 2023</span>
+        <hr className="w-[50px] my-8 mx-auto border-[#ddb5f2]" />
+        <section>
+          <h2 className="text-lg mb-5">📜 Experience</h2>
+          <div className="flex flex-col max-w-xs gap-4">
+            {EXPERIENCE.map((el) => (
+              <div
+                className="p-3 rounded border border-[#35354e]"
+                key={el.title}
+              >
+                <h3 className="text-lg">{el.title}</h3>
+                <span className="text-sm">{el.time}</span>
+              </div>
+            ))}
           </div>
         </section>
-        <section className="">
-          <h2 className="text-2xl font-bold">✉️ Get in touch</h2>
-          <a
-            href="mailto:hello@bvlad.com"
-            className="text-3xl mt-8 inline-block hover:underline"
-          >
-            hello@bvlad.com
-          </a>
-          <div className="flex mt-6">
+        <hr className="w-[50px] my-8 mx-auto border-[#ddb5f2]" />
+        <section>
+          <h2 className="text-lg mb-5">Find me on</h2>
+          <div className="mb-5">
             <a
               href="https://github.com/VladBielievtsov"
               target="_blank"
-              className="underline mr-[30px]"
+              className="inline-flex items-center space-x-1 border-b border-[#e5e7eb50] hover:border-[#e5e7eb] transition mr-1"
             >
-              GitHub
-            </a>
+              <AiFillGithub className="text-xl" />
+              <span>GitHub</span>
+            </a>{" "}
             <a
-              href="https://www.linkedin.com/in/vlad-bielievtsov/"
+              href="https://www.linkedin.com/in/vlad-bielievtsov"
               target="_blank"
-              className="underline"
+              className="inline-flex items-center space-x-1 border-b border-[#e5e7eb50] hover:border-[#e5e7eb] transition"
             >
-              LinkedIn
+              <IoLogoLinkedin className="text-xl" />
+              <span>LinkedIn</span>
             </a>
           </div>
+          <p>
+            Or mail me at{" "}
+            <a
+              href="mailto:hello@bvlad.com"
+              className="text-base inline-block hover:underline"
+            >
+              hello@bvlad.com
+            </a>
+          </p>
         </section>
       </div>
     </main>
