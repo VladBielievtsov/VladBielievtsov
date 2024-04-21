@@ -3,20 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Lato', sans-serif;
-}
-
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background-size: 40px 40px;
-  background-color: #fce77d;
-  background-image: radial-gradient(black 2px, transparent 0);
-  background-size: 40px 40px;
-  background-position: -40px -40px;
+  font-family: 'Inter', sans-serif;
 }
 
 .helloImage:hover ~ img {
