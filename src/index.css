@@ -12,6 +12,7 @@ p, h1, h2, h3 {
 
 .logo {
   line-height: 2rem !important;
+  font-family: "Herr Von Muellerhoff", cursive;
 }
 
 .helloImage:hover ~ img {
