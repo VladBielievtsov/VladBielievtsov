@@ -16,7 +16,7 @@ export default function Projects() {
     <section>
       <h2 className="text-lg mb-5">🙃 Pet Projects</h2>
       <div className="flex flex-col max-w-xs gap-4">
-        {PROJECTS.map((p, id) => (
+        {PROJECTS.map((p) => (
           <ProjectCard
             key={p.title}
             title={p.title}
