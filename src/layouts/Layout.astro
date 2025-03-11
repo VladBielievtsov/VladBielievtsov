@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/fav.png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#cba6f7" />
+
+    <!-- meta tags -->
+    <title>{title || "vlad"}</title>
+    <meta name="title" content={title || "vlad"} />
+    <meta name="description" content={description || "vlads portfolio"} />
+
+    <!-- open graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="/fav.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:title" content={title || "vlad"} />
+    <meta
+      property="og:description"
+      content={description || "vlads portfolio"}
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- twitter -->
+    <meta name="twitter:site" content="@vbelevtsov" />
+    <meta name="twitter:creator" content="@vbelevtsov" />
+    <meta name="twitter:title" content={title || "vlad"} />
+    <meta
+      name="twitter:description"
+      content={description || "vlads portfolio"}
+    />
+    <meta name="twitter:image" content="/fav.png" />
+  </head>
+
+  <body
+    class="bg-rosewater dark:bg-basee text-text font-display p-6 leading-[160%] relative min-h-screen"
+  >
+    <img
+      src="/wall.jpg"
+      alt="wall"
+      class="fixed top-0 left-0 block w-full h-screen object-cover opacity-5"
+    />
+    <div
+      class="max-w-[855px] mx-auto bg-mantle rounded shadow-md z-10 relative"
+    >
+      <Header />
+      <div class="p-4">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="../js/neko.js"></script>
