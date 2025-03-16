@@ -1,6 +1,7 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, envField, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
+import node from "@astrojs/node";
 
 import mdx from "@astrojs/mdx";
 
@@ -18,6 +19,9 @@ export default defineConfig({
       theme: "catppuccin-mocha",
     },
   },
-
   integrations: [mdx(), sitemap()],
+  output: "server",
+  adapter: node({
+    mode: "standalone",
+  }),
 });

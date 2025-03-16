@@ -2,6 +2,8 @@ import type { APIRoute } from "astro";
 import type { DiscordData } from "../types";
 import ky from "ky";
 
+export const prerender = true;
+
 const MY_DISCORD_ID = "416963547747188738";
 
 export const GET: APIRoute = async () => {
