@@ -8,7 +8,7 @@ type UserInfo = {
 };
 
 const domain = new URL(Astro.request.url).origin;
-const userInfo: UserInfo = await ky.get(`${domain}/discord`).json<UserInfo>();
+const userInfo: UserInfo = await ky.get(`https://bvlad.com/discord`).json<UserInfo>();
 
 const statusColors = {
   online: "bg-[#a6e3a1]",

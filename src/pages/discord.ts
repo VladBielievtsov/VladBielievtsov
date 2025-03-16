@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import type { DiscordData } from "../types";
 import ky from "ky";
 
-export const prerender = true;
+export const prerender = false;
 
 const MY_DISCORD_ID = "416963547747188738";
 
