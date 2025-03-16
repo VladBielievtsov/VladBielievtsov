@@ -13,7 +13,7 @@ const posts = await getCollection("blog");
         <li>
           <a
             class={`${id % 2 === 0 ? "bg-mauve/15" : "bg-mauve/5"} px-2 py-0.5 flex justify-between items-start hover:bg-mauve hover:text-basee`}
-            href={"/blog/" + post.slug}
+            href={"/blog/" + post.id}
           >
             <span>{post.data.title}</span>
             <span>{post.data.createdAt}</span>
