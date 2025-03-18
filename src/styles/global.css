@@ -20,6 +20,8 @@
     color: #1e1e2e;
     padding: 0.125rem 0.5rem;
     border-radius: 100px;
+    display: inline-block;
+    text-align: center;
   }
 }
 
