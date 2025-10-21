@@ -16,7 +16,7 @@ export default async function RootLayout({
         <link rel="icon" href="/fav.png" />
         <meta name="theme-color" content="#EEEEF5" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#191923" media="(prefers-color-scheme: dark)" />
-        <script defer src="https://umami.bvlad.com/script.js" data-website-id="1ace9434-5e42-418b-9d25-9303dc5db565"></script>
+        {/* <script defer src="https://umami.bvlad.com/script.js" data-website-id="1ace9434-5e42-418b-9d25-9303dc5db565"></script> */}
       </head>
       <body>
         <Providers>
